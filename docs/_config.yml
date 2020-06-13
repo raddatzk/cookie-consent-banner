@@ -2,7 +2,10 @@ title: Cookie Consent Banner
 sass:
   sass_dir: assets/css
   style:    compressed
- 
+
+url: "https://karstenj.github.io"
+baseurl: "/cookie-consent-banner"
+
 include:
   - _pages
 exclude:
