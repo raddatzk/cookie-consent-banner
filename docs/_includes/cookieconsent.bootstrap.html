@@ -1,6 +1,6 @@
-<script src="assets/js/cookieconsent.bootstrap.js" async></script>
+<script src={{ "/assets/js/cookieconsent.bootstrap.js" | relative_url }} async></script>
 <script type="text/javascript">
-  document.querySelector('script[src="assets/js/cookieconsent.bootstrap.js"]').onload = function() { loadJS() };
+  document.querySelector('script[src={{ "/assets/js/cookieconsent.bootstrap.js" | relative_url }}]').onload = function() { loadJS() };
   function loadJS() {ccb.initialise({
 {% if page.ccb_show_banner == false %}
     show_banner: false
