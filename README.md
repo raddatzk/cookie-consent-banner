@@ -2,6 +2,10 @@
 CCB is a flexible and responsive cookie consent banner for Jekyll. It doesn't
 require an additional plugin to be installed. It comes only with a set of 3 files.
 
+Please check this [demo](https://karstenj.github.io/cookie-consent-banner/) of the cookie consent banner.
+
+![banner example](docs/images/screenshot.png)
+
 ## Prerequisites
 - [Bootstrap 4](https://getbootstrap.com/)
 - [jQuery 3](https://jquery.com/)

@@ -9,6 +9,7 @@ baseurl: "/cookie-consent-banner"
 include:
   - _pages
 exclude:
+  - images
   - Gemfile
   - Gemfile.lock
 cookieconsent:
