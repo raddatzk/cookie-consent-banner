@@ -1,0 +1,40 @@
+---
+layout: default
+title: Home
+---
+
+<h1 class="my-4">Cookie Consent Demo</h1>
+
+<div class="row">
+  <div class="col-md-12">
+    <p>
+      This page demonstrates the usage of the jekyll cookie consent dialog.
+    </p>
+    <p><a href="javascript:ccb.showBanner();">Cookie settings</a></p>
+  </div>
+</div>
+
+<div class="toast" id="analyticsAlert" role="alert" aria-live="assertive" aria-atomic="true" class="toast" data-autohide="false">
+  <div class="toast-header">
+    <strong class="mr-auto">Statistic cookie is activ!</strong>
+    <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+</div>
+<div class="toast" id="adsAlert" role="alert" aria-live="assertive" aria-atomic="true" class="toast" data-autohide="false">
+  <div class="toast-header">
+    <strong class="mr-auto">Ads-Cookie is activ!</strong>
+    <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+</div>
+
+<script type="text/plain" class="ccb-cookie-consent" ccb-cookie-type="ccb_analytics">
+// example of in-lined java script code
+$('#analyticsAlert').toast('show')
+</script>
+
+<script type="text/plain" src="/assets/js/advertising_demo.js" class="ccb-cookie-consent" ccb-cookie-type="ccb_advertising">
+</script>

@@ -1,0 +1,11 @@
+<script src="/assets/js/cookieconsent.bootstrap.js" async></script>
+<script type="text/javascript">
+  document.querySelector('script[src="/assets/js/cookieconsent.bootstrap.js"]').onload = function() { loadJS() };
+  function loadJS() {ccb.initialise({
+{% if page.ccb_show_banner == false %}
+    show_banner: false
+{% else %}
+    show_banner: true
+{% endif %}
+  })}
+</script>
