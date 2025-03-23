@@ -16,8 +16,9 @@ var ccb =
         disabled: {{ cookie.disabled }},
         allowed: {{ cookie.allowed }},
         expirydays: {{ cookie.expirydays }},
-        loaded: false
-      }, 
+        loaded: false,
+        iframe_placeholder: "{{ cookie.iframePlaceholder }}"
+      },
 {% endfor %}
     },
 
@@ -199,6 +200,23 @@ var ccb =
           jQuery(this).remove();
         }
       });
+        jQuery('iframe.ccb-cookie-consent').each(function () {
+          key = jQuery(this).attr("ccb-cookie-type");
+          if (ccb.cookies[key].allowed) {
+            jQuery(this).attr("src", jQuery(this).attr("data-src"));
+          } else {
+            {%- if site.cookieconsent.iframePlaceholder %}
+            var placeholder = "{{ site.cookieconsent.iframePlaceholder }}";
+            {%- else %}
+            var placeholder = ""
+            {%- endif %}
+
+            if (ccb.cookies[key].iframe_placeholder !== "") {
+              placeholder = ccb.cookies[key].iframe_placeholder;
+            }
+            jQuery(this).attr("src", placeholder);
+          }
+        });
     },
     isPersonalAdsAllowed: function() {
       return ccb.cookies["ccb_advertising"].allowed;

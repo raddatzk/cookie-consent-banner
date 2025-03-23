@@ -71,6 +71,7 @@ cookieconsent:
   btnAcceptAll: "Accept All"
   btnAcceptSelected: "Accept Only Selected"
   btnMore: "More"
+  iframePlaceholder: "http://localhost/globalPlaceholder"
   cookies:
     -
       name: ccb_necessary
@@ -79,6 +80,7 @@ cookieconsent:
       expirydays: 365
       disabled: true
       allowed: true
+      iframePlaceholder: "http://localhost/specificPlaceholder"
     -
       name: ccb_analytics
       title: "Statistic"
@@ -164,3 +166,20 @@ Add the following lines before the closing body-tag.
 
 These changes will prevent loading of AdSense code at page load and waits until the cookies have been loaded
 or the user has confirmed the usage of cookies.
+
+### Activate/Deactivate iframe code
+The process is very similar to activating/deactivating script
+In order to avoid the script execution until the user has allowed the usage of the related script category, loading the
+iframe has to be stopped. The necessary steps are:
+
+- rename the src attribute in the iframe wo data-src
+- add a class attribute to the script tag with the value "ccb-cookie-consent"
+- add a ccb-cookie-type attribute to the script tag with the value which defines the script category
+
+The corrected iframe would then look like this
+
+```html
+<iframe class="ccb-cookie-consent" ccb-cookie-type="ccb_necessary" data-src="https://www.youtube.com/embed/<id>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+```
+
+At some point you have to configure a placeholder that is used when the user does not give consent. See [configuration](#configuration) for an example.
